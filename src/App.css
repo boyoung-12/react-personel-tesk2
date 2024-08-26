@@ -1,0 +1,23 @@
+/* 일반적으로 여기서 root의 margin o auto를 주면서 화면의 기준을 잡아주는데
+이걸 삭제하고 사용할때는 내가 따로 root의 height을 설정해줘야 한다
+왜냐하면 root 밑에는 내가 사용할 app이 있기때문에 app안에 사용될 컴포넌트들이 화면에서 위치 이동할때 기준이 있어야하는데
+root가 그 기준점이 되기때문에
+밑에가 원래 css에서 root에 설정한 디폴트값  */
+
+/* #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    }
+    
+    .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+    }
+    .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+    }
+    .logo.react:ho */

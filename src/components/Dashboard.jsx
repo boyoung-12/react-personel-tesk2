@@ -98,6 +98,11 @@ const ChangedListBoxforDashBoard = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  transition: transform 0.2s ease-in-out; /* Adding smooth transition */
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
 `;
 
 const ListBoxImage = styled.img`

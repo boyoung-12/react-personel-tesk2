@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <StPageContainer>
       <StTextBox>
-        <Title
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBZg0KsR2B3QRF9BNcub9Ix8pZwtfugP6Dww&s"
+        <TitleImage
+          src="https://react-6-pokemon.vercel.app/assets/pokemon-logo-RN0wntMB.png"
           alt="titleImage"
         />
         <StButton onClick={() => navigate("/dex")}>Let's Go Pokemon~!</StButton>
@@ -36,7 +36,9 @@ const StTextBox = styled.div`
   align-items: center;
 `;
 
-const Title = styled.img``;
+const TitleImage = styled.img`
+  width: 400px;
+`;
 
 const StButton = styled.button`
   width: 180px;

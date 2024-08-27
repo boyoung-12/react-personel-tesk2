@@ -16,7 +16,8 @@ const Listboard = () => {
     </PokemonListBoard>
   );
 };
-
+// 컴포넌트 분리해서 props를 내려주기전에는 listbox에 key값이 들어가있었는데, 분리후에 props로 내려줄때 pokemoncard에 key값을 주는것은
+// 이것은 카드가 하나씩 만들어질 때 아이디를 주는 것이라서 만들어지는 대상에 id를 주는게 아니라 만드는 주체인 map에서 id를 써줘야하기 때문.
 export default Listboard;
 
 const PokemonListBoard = styled.div`

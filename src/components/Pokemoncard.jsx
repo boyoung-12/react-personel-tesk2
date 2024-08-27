@@ -42,6 +42,12 @@ const ListBox = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   gap: 6px;
+  transition: transform 0.2s ease-in-out; /* Adding smooth transition */
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
 `;
 const ListBoxImage = styled.img`
   width: 100px;
@@ -83,4 +89,5 @@ const ListBoxButtonForListBoard = styled.button`
   border-radius: 5px;
   color: white;
   border-color: transparent;
+  cursor: pointer;
 `;

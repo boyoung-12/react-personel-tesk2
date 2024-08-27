@@ -57,4 +57,5 @@ const InfoCardButton = styled.button`
   border-radius: 5px;
   color: white;
   border-color: transparent;
+  cursor: pointer;
 `;

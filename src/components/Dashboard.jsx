@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import styled from "styled-components";
+import { PokemonContext } from "../pokemonContext";
 
-const Dashboard = (props) => {
-  console.log("here", props);
+const Dashboard = () => {
+  const { dashboard, deleteListBoxFromDashBoard, array } =
+    useContext(PokemonContext);
 
   return (
     <PokemonDashBoard>
       <DashBoardTitle>Pokemon Wallet</DashBoardTitle>
       {/* question: how can i adjust the style to dashboard.map and array.map seperlately */}
       <DashBoardBoxContainer>
-        {props.dashboard.map((item) => (
+        {dashboard.map((item) => (
           <ChangedListBoxforDashBoard key={item.id}>
             <ListBoxImage src={item.image} />
 
@@ -17,7 +20,7 @@ const Dashboard = (props) => {
               <ListBoxTitleText>{item.name}</ListBoxTitleText>
               <ListBoxNumberText>No.0{item.id}</ListBoxNumberText>
               <ListBoxButtonForDashBoard
-                onClick={() => props.deleteListBoxFromBashBoard(item.id)}
+                onClick={() => deleteListBoxFromDashBoard(item.id)}
               >
                 Delete
               </ListBoxButtonForDashBoard>
@@ -26,7 +29,7 @@ const Dashboard = (props) => {
         ))}
 
         {/* 만약 들어올 인자가 필요 없다면 parameter에 _ 이걸 써주면 된다. */}
-        {props.array.map((_, index) => (
+        {array.map((_, index) => (
           <DashBoardBox key={index}>
             <DashBoardBoxImage
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/220px-Pokebola-pokeball-png-0.png"

@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { PokemonContext } from "../pokemonContext";
 
 const Pokemoncard = (props) => {
-  const navigate = useNavigate();
+  const { navigate, AddListBoxToDashBoard } = useContext(PokemonContext);
+
   return (
     <ListBox>
       <ListBoxTextContainer>
@@ -18,7 +20,7 @@ const Pokemoncard = (props) => {
           <ListBoxNumberText>No. 0{props.content.id}</ListBoxNumberText>
         </ListBoxWithOutButton>
         <ListBoxButtonForListBoard
-          onClick={() => props.AddListBoxToDashBoard(props.content.id)}
+          onClick={() => AddListBoxToDashBoard(props.content.id)}
         >
           Add
         </ListBoxButtonForListBoard>

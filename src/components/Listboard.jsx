@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import Pokemoncard from "./Pokemoncard";
+import { useContext } from "react";
+import { PokemonContext } from "../pokemonContext";
 
-const Listboard = (props) => {
+const Listboard = () => {
+  const { contents } = useContext(PokemonContext);
   return (
     <PokemonListBoard>
       <ListBoxContainer>
-        {props.contents.map((content) => (
-          <Pokemoncard
-            key={content.id}
-            content={content}
-            AddListBoxToDashBoard={props.AddListBoxToDashBoard}
-          ></Pokemoncard>
+        {contents.map((content) => (
+          <Pokemoncard key={content.id} content={content}></Pokemoncard>
         ))}
       </ListBoxContainer>
     </PokemonListBoard>

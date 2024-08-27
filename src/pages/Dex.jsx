@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Dashboard from "../components/Dashboard";
 import Listboard from "../components/Listboard";
+import { PokemonContext } from "../pokemonContext";
 
 const Dex = () => {
   const [contents, setContents] = useState(MOCK_DATA);
@@ -60,7 +61,7 @@ const Dex = () => {
   console.log("어레이", array);
   console.log("test", dashboard);
 
-  const deleteListBoxFromBashBoard = (id) => {
+  const deleteListBoxFromDashBoard = (id) => {
     const existListCard = dashboard.filter((item) => {
       return item.id !== id;
     });
@@ -69,16 +70,19 @@ const Dex = () => {
 
   return (
     <StPageContainer>
-      <Dashboard
-        dashboard={dashboard}
-        deleteListBoxFromBashBoard={deleteListBoxFromBashBoard}
-        array={array}
-      ></Dashboard>
-      <Listboard
-        contents={contents}
-        AddListBoxToDashBoard={AddListBoxToDashBoard}
-        navigate={navigate}
-      ></Listboard>
+      <PokemonContext.Provider
+        value={{
+          dashboard: dashboard,
+          deleteListBoxFromDashBoard: deleteListBoxFromDashBoard,
+          array: array,
+          contents: contents,
+          AddListBoxToDashBoard: AddListBoxToDashBoard,
+          navigate: navigate,
+        }}
+      >
+        <Dashboard />
+        <Listboard />
+      </PokemonContext.Provider>
     </StPageContainer>
   );
 };
